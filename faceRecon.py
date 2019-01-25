@@ -1,5 +1,5 @@
 from PIL import Image
-import face_recognition, random
+import face_recognition, random, sys
 
 """ 
 Returns a list of coordinates where the faces are from a given picture,
@@ -14,10 +14,11 @@ def reconFaces(ImagePath):
 		of each one
 		"""
 		facesCoordinates = face_recognition.face_locations(image)
-		print('\tImage contains ', len(facesCoordinates), ' faces\n')
+		print('\tImage contains '+ str(len(facesCoordinates))+' faces\n')
 		return(facesCoordinates, image)
 	except:
-		print('Incorrect Path to image: ', ImagePath)
+		error = 'Incorrect Path to image: ' + str(ImagePath)
+		sys.exit(error)
 
 """ 
 Crops faces from a given image (already loaded) 

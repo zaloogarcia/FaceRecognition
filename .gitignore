@@ -1,2 +1,6 @@
 *.jpg
 __pycache__/
+*faces*
+*.mp4
+*frame*
+*.pyc
